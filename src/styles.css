@@ -1,0 +1,96 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@theme {
+  --font-sans: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+
+  --color-background: #08090b;
+  --color-foreground: #ecece8;
+  --color-card: #101218;
+  --color-card-foreground: #ecece8;
+  --color-popover: #161920;
+  --color-popover-foreground: #ecece8;
+  --color-primary: #e8e6df;
+  --color-primary-foreground: #0c0d10;
+  --color-secondary: #181c24;
+  --color-secondary-foreground: #ecece8;
+  --color-muted: #181c24;
+  --color-muted-foreground: #8b909c;
+  --color-accent: #1f242e;
+  --color-accent-foreground: #ecece8;
+  --color-destructive: #c4544a;
+  --color-border: rgb(236 236 232 / 10%);
+  --color-input: rgb(236 236 232 / 12%);
+  --color-ring: #c8ccd4;
+  --color-go: #3f9d73;
+  --color-go-dim: rgb(63 157 115 / 16%);
+  --color-stop: #c4544a;
+  --color-stop-dim: rgb(196 84 74 / 16%);
+  --color-warn: #c4a15a;
+  --color-warn-dim: rgb(196 161 90 / 14%);
+  --color-late: #7d93a8;
+  --color-hairline: rgb(236 236 232 / 8%);
+
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius: 10px;
+
+  --shadow-border: 0 0 0 1px rgb(255 255 255 / 8%);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  html {
+    background: var(--color-background);
+    color: var(--color-foreground);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    min-height: 100dvh;
+    background-color: var(--color-background);
+    background-image: radial-gradient(
+      ellipse 90% 50% at 50% -10%,
+      rgb(232 230 223 / 4%),
+      transparent 55%
+    );
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+  }
+
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+
+  ::selection {
+    background: rgb(232 230 223 / 18%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
